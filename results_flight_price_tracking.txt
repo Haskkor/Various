@@ -1,0 +1,32 @@
+VOL : 1
+Date de la recherche : 20161014_223333
+Compagnie principale : Cathay Pacific Airways Ltd.
+Prix total : 704.19e
+Duree totale du vol : 24h 20m
+Aeroport de depart : CDG
+Heure de depart : 2017-06-05 12:00 02:0
+Aeroport d'arrivee : SIN
+Heure d'arrivee : 2017-06-06 06:50 08:0
+Duree du vol : 12h 50m
+Duree de la correspondance : 1h 50m
+Heure de depart : 2017-06-06 08:40 08:0
+Aeroport d'arrivee : AKL
+Heure d'arrivee : 2017-06-06 22:20 12:0
+Duree du vol : 9h 40m
+
+VOL : 2
+Date de la recherche : 20161014_223333
+Compagnie principale : Emirates
+Prix total : 779.70e
+Duree totale du vol : 26h 45m
+Aeroport de depart : CDG
+Heure de depart : 2017-06-05 21:15 02:0
+Aeroport d'arrivee : HKG
+Heure d'arrivee : 2017-06-06 15:00 08:0
+Duree du vol : 11h 45m
+Duree de la correspondance : 4h 10m
+Heure de depart : 2017-06-06 19:10 08:0
+Aeroport d'arrivee : AKL
+Heure d'arrivee : 2017-06-07 10:00 12:0
+Duree du vol : 10h 50m
+
