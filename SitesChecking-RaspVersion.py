@@ -6,7 +6,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-print("SITES CHECKING...\n")
+print("SITES CHECKING...")
 
 # Variables
 now = datetime.now().date()
@@ -27,7 +27,11 @@ newspaper.news_pool.join()
 for paper in papers:
     for article in paper.articles:
         if article.publish_date is not None and article.url[-5:] != "feed/" and article.url[-12:] != "#dsq-content" and article.title != "":
-            today_articles.append("<li><a href={}>{} - {}</a></li>".format(article.url, paper.brand, article.title))
+            if article.title == None:
+                today_articles.append("<li><a href={}>{} - {}</a></li>".format(article.url, paper.brand, article.url))
+            else:
+                today_articles.append("<li><a href={}>{} - {}</a></li>".format(article.url, paper.brand, article.title))
+
 
 today_articles.sort()
 

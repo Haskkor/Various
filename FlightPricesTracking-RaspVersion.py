@@ -11,7 +11,7 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
-print("FLIGHT PRICES TRACKING...\n")
+print("FLIGHT PRICES TRACKING...")
 
 # API
 url = "https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyBDi8VT0DWJOiK8b3ditTZUfzHF1_4MELY"

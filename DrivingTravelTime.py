@@ -6,7 +6,7 @@ import sys
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-print("DRIVING TRAVEL TIME START...\n")
+print("DRIVING TRAVEL TIME START...")
 
 # VARIABLES
 my_mail = "haskkor@gmail.com"
