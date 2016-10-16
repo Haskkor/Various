@@ -1,0 +1,5 @@
+0 * * * * sudo python3 /home/pi/PythonScripts/FlightPricesTracking/FlightPricesTracking.py >> /home/pi/PythonScripts/scripts.log 2>&1
+0 5 * * * sudo python3 /home/pi/PythonScripts/SitesChecking/SitesChecking.py >> /home/pi/PythonScripts/scripts.log 2>&1
+0 6 * * mon-fri sudo python3 /home/pi/PythonScripts/DrivingTravelTime/DrivingTravelTime.py 43.906853 1.688418 43.578194 1.362263 >> /home/pi/PythonScripts/scripts.log 2>&1
+0 14 * * * sudo python3 /home/pi/PythonScripts/SitesChecking/SitesChecking.py >> /home/pi/PythonScripts/scripts.log 2>&1
+30 17 * * mon-fri sudo python3 /home/pi/PythonScripts/DrivingTravelTime/DrivingTravelTime.py 43.578194 1.362263 43.906853 1.688418 >> /home/pi/PythonScripts/scripts.log 2>&1
