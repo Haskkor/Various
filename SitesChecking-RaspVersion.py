@@ -26,8 +26,8 @@ newspaper.news_pool.join()
 # Gathering articles
 for paper in papers:
     for article in paper.articles:
-        if article.publish_date is not None and article.url[-5:] != "feed/" and article.url[-12:] != "#dsq-content" and article.title != "":
-            if article.title == None:
+        if article.publish_date is not None and article.url[-5:] != "feed/" and article.url[-12:] != "#dsq-content" and article.publish_date == now:
+            if article.title == None or article.title != "" :
                 today_articles.append("<li><a href={}>{} - {}</a></li>".format(article.url, paper.brand, article.url))
             else:
                 today_articles.append("<li><a href={}>{} - {}</a></li>".format(article.url, paper.brand, article.title))
