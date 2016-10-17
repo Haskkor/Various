@@ -3,10 +3,11 @@
 import requests
 import smtplib
 import sys
+import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-print("DRIVING TRAVEL TIME START...")
+print("DRIVING TRAVEL TIME START " + str(datetime.datetime.now()) + " ...")
 
 # VARIABLES
 my_mail = "haskkor@gmail.com"

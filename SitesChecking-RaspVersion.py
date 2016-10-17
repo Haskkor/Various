@@ -6,7 +6,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-print("SITES CHECKING...")
+print("SITES CHECKING " + str(datetime.now()) + " ...")
 
 # Variables
 now = datetime.now().date()
