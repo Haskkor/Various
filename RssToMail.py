@@ -4,6 +4,7 @@ import feedparser
 import datetime
 
 d = feedparser.parse('http://www.gamekult.com/feeds/actu.html')
+feedparser.registerDateHandler("W3CDTF")
 
 #print(d['feed']['title'])
 
@@ -17,7 +18,10 @@ d = feedparser.parse('http://www.gamekult.com/feeds/actu.html')
 
 #print(d.entries[0]['link'])
 
-now = datetime.datetime.now()
+year = datetime.datetime.now().year
+month = datetime.datetime.now().month
+day = datetime.datetime.now().day
 
 for post in d.entries:
-    print(post.published + " --> " + post.title + ": " + post.link + "")
+    if post.published_parsed[0] == year and post.published_parsed[1] == month and post.published_parsed[2] == 18:
+        print(post.published + " --> " + post.title + ": " + post.link + "")
