@@ -6,62 +6,50 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-print("RSS TO MAIL " + str(datetime.datetime.now()) + " ...")
+print("RSS TO MAIL " + str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + " ...")
 
 # Variables
-feedparser.registerDateHandler("W3CDTF")
 today_articles = list()
 year = datetime.datetime.now().year
 month = datetime.datetime.now().month
 day = datetime.datetime.now().day
 
 # Websites to check
-#feed_list = ['http://www.gamekult.com/feeds/actu.html',
-#             'http://http://www.journaldugeek.com/feed/',
-#             'https://www.geeksaresexy.net/feed/',
-#             'http://korben.info/feed',
-#             'http://www.elbakin.net/rss.php',
-#             'http://www.penofchaos.com/naheulbeukrss.xml']
+feed_list = ['http://feeds2.feedburner.com/LeJournalduGeek',
+             'http://www.gamekult.com/feeds/actu.html',
+             'https://www.geeksaresexy.net/feed/',
+             'http://korben.info/feed',
+             'http://www.penofchaos.com/naheulbeukrss.xml']
 
 # Gathering feeds
-#for feed in feed_list:
-#    d = feedparser.parse(feed)
-#    for post in d.entries:
-#        if post.published_parsed[0] == year and \
-#           post.published_parsed[1] == month and \
-#           post.published_parsed[2] == day:
-#            today_articles.append("<li><a href={}>{} - {}</a></li>".format(post.link, d['feed']['title'], post.title))
-
-
-##### TESTER TOUS LES SITES EN HTTPS
-
-d = feedparser.parse('https://www.gamekult.com/feeds/actu.html')
-for post in d.entries:
-    if post.published_parsed[0] == year and \
-       post.published_parsed[1] == month and \
-       post.published_parsed[2] == day:
-       today_articles.append("<li><a href={}>{} - {}</a></li>".format(post.link, d['feed']['title'], post.title))
-
-
-
-
-
-
-
+for feed in feed_list:
+    d = feedparser.parse(feed)
+    for post in d.entries:
+        if (post.published_parsed.tm_year == year and
+            post.published_parsed.tm_mon == month and
+            post.published_parsed.tm_mday == day):
+            today_articles.append("<tr><td>{}</td><td>{}</td><td>{}</td><td><a href={}>Go</a></td></tr>".format(d['feed']['title'], post.published[0:-5], post.title, post.link))
+            
 # Send a mail
 msg = MIMEMultipart()
 msg['From'] = "haskkor@gmail.com"
 msg['To'] = "haskkor@gmail.com"
-msg['Subject'] = "[RSS FEEDS] News - {}".format(datetime.datetime.now())
+msg['Subject'] = "[RSS FEEDS] News - {}".format(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 html = """\
 <html>
     <head>
         NEWS LIST
     </head>
     <body>
-        <ul>
+        <table>
+            <tr>
+                <th>Website</th>
+                <th>Date</th>
+                <th>Title</th>
+                <th>Link</th>                
+            </tr>
             {}
-        </ul>
+        </table
     </body>
 </html>
 """.format(''.join(today_articles))
@@ -75,13 +63,7 @@ server.quit()
 
 print("OK\n")
 
-#print(d['feed']['title'])
-#print(d['feed']['link'])
-#print(d.feed.subtitle)
-#print(len(d['entries']))
-#print(d['entries'][0]['title'])
-#print(d.entries[0]['link'])
-
+# http://www.elbakin.net/rss.php
 
 
 
