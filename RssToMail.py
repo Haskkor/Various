@@ -21,22 +21,42 @@ feed_list = ['http://feeds2.feedburner.com/LeJournalduGeek',
              'http://www.gamekult.com/feeds/actu.html',
              'https://www.geeksaresexy.net/feed/',
              'http://korben.info/feed',
-             'http://www.penofchaos.com/naheulbeukrss.xml']
+             'http://www.penofchaos.com/naheulbeukrss.xml',
+             'http://planetpython.org/rss20.xml',
+             'http://www.futura-sciences.com/rss/actualites.xml',
+             'http://www.futura-sciences.com/rss/dossiers.xml',
+             'http://www.futura-sciences.com/rss/definitions.xml',
+             'http://www.futura-sciences.com/rss/questions-reponses.xml',
+             'http://www.futura-sciences.com/rss/photos.xml',
+             'http://www.futura-sciences.com/rss/services/fonds-ecran.xml',
+             'http://www.futura-sciences.com/rss/services/cartes-virtuelles.xml',
+             'https://www.reddit.com/r/Python/.rss']
 
 # Gathering feeds
 for feed in feed_list:
     d = feedparser.parse(feed)
     for i in range(len(d.entries)):
         post = d.entries[i]
-        if (post.published_parsed.tm_year == year and
-            post.published_parsed.tm_mon == month and
-            post.published_parsed.tm_mday == day and
-            post.published_parsed.tm_hour > int(hour)):
-            tr = "<tr>"
-            if (i % 2 != 0):
-                tr = "<tr style=\"background-color:antiquewhite;\">"
-            today_articles.append(tr + "<td>{}</td><td>{}</td><td>{}</td><td><a href={}>Go</a></td></tr>".format(d['feed']['title'], post.published[0:-5], post.title, post.link))
-            
+        if "published_parsed" in post:
+            if (post.published_parsed.tm_year == year and
+                post.published_parsed.tm_mon == month and
+                post.published_parsed.tm_mday == day and
+                post.published_parsed.tm_hour > int(hour)):
+                tr = "<tr>"
+                if (i % 2 != 0):
+                    tr = "<tr style=\"background-color:antiquewhite;\">"
+                today_articles.append(tr + "<td>{}</td><td>{}</td><td>{}</td><td><a href={}>Go</a></td></tr>".format(d['feed']['title'], post.published[0:-5], post.title, post.link))
+        else:
+            if (post.updated_parsed.tm_year == year and
+                post.updated_parsed.tm_mon == month and
+                post.updated_parsed.tm_mday == day and
+                post.updated_parsed.tm_hour > int(hour)):
+                tr = "<tr>"
+                if (i % 2 != 0):
+                    tr = "<tr style=\"background-color:antiquewhite;\">"
+                today_articles.append(tr + "<td>{}</td><td>{}</td><td>{}</td><td><a href={}>Go</a></td></tr>".format(d['feed']['title'], post.updated[0:-5], post.title, post.link))
+
+                
 # Send a mail
 msg = MIMEMultipart()
 msg['From'] = "haskkor@gmail.com"
