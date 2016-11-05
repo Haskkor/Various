@@ -37,8 +37,8 @@ today_articles.sort()
 
 # Send a mail
 msg = MIMEMultipart()
-msg['From'] = "haskkor@gmail.com"
-msg['To'] = "haskkor@gmail.com"
+msg['From'] = "MAIL"
+msg['To'] = "MAIL"
 msg['Subject'] = "[WEBSITES] News - {}".format(now)
 html = """\
 <html>
@@ -55,9 +55,9 @@ html = """\
 msg.attach(MIMEText(html, 'html'))
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
-server.login("haskkor@gmail.com", "gkpkqtmaxlonnrry")
+server.login("MAIL", "PWD")
 text = msg.as_string()
-server.sendmail("haskkor@gmail.com", "haskkor@gmail.com", text)
+server.sendmail("MAIL", "MAIL", text)
 server.quit()
 
 print("OK\n")

@@ -10,10 +10,10 @@ from email.mime.text import MIMEText
 print("DRIVING TRAVEL TIME START " + str(datetime.datetime.now()) + " ...")
 
 # VARIABLES
-my_mail = "haskkor@gmail.com"
-to_mail = "haskkor@gmail.com"
-api_id = "AIzaSyCsKNwpw72lIuTl9TMnph-dkco8tbLeA7Y"
-google_app_pwd = "gkpkqtmaxlonnrry"
+my_mail = "MAIL"
+to_mail = "MAIL"
+api_id = "YOUR_ID"
+google_app_pwd = "YOUR_PWD"
 origin_lat = sys.argv[1]
 origin_lon = sys.argv[2]
 destination_lat = sys.argv[3]

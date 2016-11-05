@@ -14,9 +14,9 @@ from email import encoders
 print("FLIGHT PRICES TRACKING " + str(datetime.datetime.now()) + " ...")
 
 # API
-url = "https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyBDi8VT0DWJOiK8b3ditTZUfzHF1_4MELY"
+url = "https://www.googleapis.com/qpxExpress/v1/trips/search?key=YOUR_KEY"
 headers = {'content-type': 'application/json'}
-google_app_pwd = "gkpkqtmaxlonnrry"
+google_app_pwd = "YOUR_PWD"
 
 # VARIABLES
 FROM = "PAR"
@@ -24,8 +24,8 @@ TO = "AKL"
 DATE = "2017-06-05"
 PASSENGERS = 1
 SOLUTIONS = 2
-MY_MAIL = "haskkor@gmail.com"
-TO_MAIL = "haskkor@gmail.com"
+MY_MAIL = "MAIL"
+TO_MAIL = "MAIL"
 f_name = "results_flight_price_tracking.txt"
 AlERT_PRICE = 700
 

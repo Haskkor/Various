@@ -11,8 +11,8 @@ if __name__ == '__main__':
     output_fname = 'result_' + date + '.json'
     search_term = "flight paris auckland"
     num_requests = 1
-    search_engine_id = '000131698311187267455:pvrxzsjqn-c'
-    api_key = 'AIzaSyBDi8VT0DWJOiK8b3ditTZUfzHF1_4MELY'
+    search_engine_id = 'YOUR_ID'
+    api_key = 'YOUR_KEY'
     # API name and version
     service = build('customsearch', 'v1', developerKey=api_key)
     # CustomSearch API returns the cse Resource
