@@ -24,6 +24,7 @@ feed_list = ['http://feeds2.feedburner.com/LeJournalduGeek',
              'http://korben.info/feed',
              'http://www.laboiteverte.fr/feed/',
              'https://www.wired.com/feed/',
+             'http://www.infoworld.com/index.rss',
              'http://planetpython.org/rss20.xml',
              'https://www.reddit.com/r/Python/.rss',
              'https://www.reddit.com/r/coding/.rss',
@@ -43,7 +44,7 @@ feed_list = ['http://feeds2.feedburner.com/LeJournalduGeek',
              'https://www.smashingmagazine.com/feed/']
 
 colors = ['#FFA405', '#C19659', '#F3951B', '#E5C39F', '#BE9B7C',
-          '#B3DDED', '#6D8DBE', '#2676AD', '#C9DEE9', '#D185B7',
+          '#6495ED', '#B3DDED', '#6D8DBE', '#2676AD', '#C9DEE9', '#D185B7',
           '#648637', '#50C878', '#90ee90', '#77DD99', '#AADD77', '#9AFF9A', '#9BCD9B',
           '#FDFDAF', '#FCFC64', '#FDFD96', '#FDE396', '#ECFD96']
 
